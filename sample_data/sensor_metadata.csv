@@ -1,0 +1,4 @@
+sensor_id,sensor_type,location,install_date,manufacturer,model,maintenance_interval_days
+TEMP_001,TEMP,room_A101,2024-01-15,SensorCorp,TC-500,90
+TEMP_002,TEMP,room_B203,2024-01-15,SensorCorp,TC-500,90
+CO2_001,CO2,hallway_C,2024-02-01,AirQuality Inc,AQ-200,60

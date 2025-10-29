@@ -1,0 +1,170 @@
+[
+  {
+    "sensor_id": "TEMP_001",
+    "timestamp": "2025-10-15T08:00:00",
+    "value": 19.2,
+    "unit": "celsius",
+    "location": "room_A101",
+    "battery_level": 83
+  },
+  {
+    "sensor_id": "TEMP_002",
+    "timestamp": "2025-10-15T08:00:00",
+    "value": 20.8,
+    "unit": "celsius",
+    "location": "room_B203",
+    "battery_level": 88
+  },
+  {
+    "sensor_id": "CO2_001",
+    "timestamp": "2025-10-15T08:00:00",
+    "value": 410,
+    "unit": "ppm",
+    "location": "hallway_C",
+    "battery_level": 74
+  },
+  {
+    "sensor_id": "TEMP_001",
+    "timestamp": "2025-10-15T09:00:00",
+    "value": 21.1,
+    "unit": "celsius",
+    "location": "room_A101",
+    "battery_level": 83
+  },
+  {
+    "sensor_id": "TEMP_002",
+    "timestamp": "2025-10-15T09:00:00",
+    "value": 22.9,
+    "unit": "celsius",
+    "location": "room_B203",
+    "battery_level": 88
+  },
+  {
+    "sensor_id": "CO2_001",
+    "timestamp": "2025-10-15T09:00:00",
+    "value": 680,
+    "unit": "ppm",
+    "location": "hallway_C",
+    "battery_level": 74
+  },
+  {
+    "sensor_id": "TEMP_001",
+    "timestamp": "2025-10-15T10:00:00",
+    "value": 68.4,
+    "unit": "celsius",
+    "location": "room_A101",
+    "battery_level": 82
+  },
+  {
+    "sensor_id": "TEMP_002",
+    "timestamp": "2025-10-15T10:00:00",
+    "value": 24.1,
+    "unit": "celsius",
+    "location": "room_B203",
+    "battery_level": 87
+  },
+  {
+    "sensor_id": "CO2_001",
+    "timestamp": "2025-10-15T10:00:00",
+    "value": 7450,
+    "unit": "ppm",
+    "location": "hallway_C",
+    "battery_level": 73
+  },
+  {
+    "sensor_id": "TEMP_001",
+    "timestamp": "2025-10-15T12:00:00",
+    "value": 23.8,
+    "unit": "celsius",
+    "location": "room_A101",
+    "battery_level": 82
+  },
+  {
+    "sensor_id": "TEMP_002",
+    "timestamp": "2025-10-15T12:00:00",
+    "value": 24.6,
+    "unit": "celsius",
+    "location": "room_B203",
+    "battery_level": 87
+  },
+  {
+    "sensor_id": "CO2_001",
+    "timestamp": "2025-10-15T12:00:00",
+    "value": 1150,
+    "unit": "ppm",
+    "location": "hallway_C",
+    "battery_level": 73
+  },
+  {
+    "sensor_id": "TEMP_001",
+    "timestamp": "2025-10-15T14:00:00",
+    "value": 24.3,
+    "unit": "celsius",
+    "location": "room_A101",
+    "battery_level": 81
+  },
+  {
+    "sensor_id": "TEMP_002",
+    "timestamp": "2025-10-15T14:00:00",
+    "value": 25.1,
+    "unit": "celsius",
+    "location": "room_B203",
+    "battery_level": 86
+  },
+  {
+    "sensor_id": "CO2_001",
+    "timestamp": "2025-10-15T14:00:00",
+    "value": 1020,
+    "unit": "ppm",
+    "location": "hallway_C",
+    "battery_level": 72
+  },
+  {
+    "sensor_id": "TEMP_001",
+    "timestamp": "2025-10-15T16:00:00",
+    "value": 23.5,
+    "unit": "celsius",
+    "location": "room_A101",
+    "battery_level": 81
+  },
+  {
+    "sensor_id": "TEMP_002",
+    "timestamp": "2025-10-15T16:00:00",
+    "value": 24.2,
+    "unit": "celsius",
+    "location": "room_B203",
+    "battery_level": 86
+  },
+  {
+    "sensor_id": "CO2_001",
+    "timestamp": null,
+    "value": 760,
+    "unit": "ppm",
+    "location": "hallway_C",
+    "battery_level": 72
+  },
+  {
+    "sensor_id": "TEMP_001",
+    "timestamp": "2025-10-15T18:00:00",
+    "value": 22.1,
+    "unit": "celsius",
+    "location": "room_A101",
+    "battery_level": 80
+  },
+  {
+    "sensor_id": "TEMP_002",
+    "timestamp": "2025-10-15T18:00:00",
+    "value": 22.8,
+    "unit": "celsius",
+    "location": "room_B203",
+    "battery_level": 85
+  },
+  {
+    "sensor_id": "CO2_001",
+    "timestamp": "2025-10-15T18:00:00",
+    "value": 540,
+    "unit": "ppm",
+    "location": "hallway_C",
+    "battery_level": 71
+  }
+]
