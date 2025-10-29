@@ -1,6 +1,6 @@
 # ETL Processes - Data Engineering Pipeline Tutorial
 
-A hands-on tutorial for learning how to build basic data engineering pipelines with Python. This project teaches ETL (Extract, Transform, Load) concepts through a practical IoT sensor data processing example.
+A hands-on tutorial in Dutch, for learning how to build basic data engineering pipelines with Python. This project teaches ETL (Extract, Transform, Load) concepts through a practical IoT sensor data processing example.
 
 ## Overview
 
