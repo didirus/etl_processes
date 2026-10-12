@@ -1,124 +1,111 @@
-# ETL Processes - Data Engineering Pipeline Tutorial
+# ETL Processen - Tutorial Data Engineering Pipeline
 
-A hands-on tutorial in Dutch, for learning how to build basic data engineering pipelines with Python. This project teaches ETL (Extract, Transform, Load) concepts through a practical IoT sensor data processing example.
+In deze praktische tutorial leer je een basis data-engineering pipelines te bouwen in Python. Dit project behandelt ETL-concepten (Extract, Transform, Load) aan de hand van een realistisch voorbeeld met IoT-sensordata.
 
-## Overview
+## Overzicht
 
-This tutorial walks you through building a complete data pipeline that processes temperature and CO2 sensor data from a university office building. You'll learn to:
+In deze tutorial bouw je stap voor stap een complete datapipeline die temperatuur- en CO2-sensordata uit een faculteitsgebouw verwerkt. Je leert om:
 
-- Extract data from multiple sources (JSON files, CSV, public APIs)
-- Transform and enrich data with business logic
-- Validate data quality
-- Load data into a data warehouse
-- Scale with Apache Spark
+- Data te extraheren uit meerdere bronnen (JSON-bestanden, CSV, publieke API's)
+- Data te transformeren en verrijken met businesslogica
+- Datakwaliteit te valideren
+- Data te laden in een datawarehouse
+- Op te schalen met Apache Spark
 
-## Prerequisites
+## Vereisten
 
-- Python 3.8+
-- Basic knowledge of Python and pandas
-- Jupyter Notebook or Google Colab
+- Python 3.11+
+- Basiskennis van Python en pandas
+- Jupyter Notebook of Google Colab
 
-## Setup Instructions
+## Installatie-instructies
 
-1. **Clone/download this repository**
+1. **Clone/download deze repository**
 
-2. **Create a virtual environment** (recommended):
+2. **Gebruik de standaard projectcommando's**:
    ```bash
-   python -m venv .venv
-   source .venv/bin/activate  # On Windows: .venv\Scripts\activate
+   make install
+   ```
+   Dit commando maakt `.venv` aan, installeert `uv`, synchroniseert alle afhankelijkheden uit `pyproject.toml` en controleert de omgeving.
+
+3. **Activeer de omgeving**:
+   ```bash
+   source .venv/bin/activate
    ```
 
-3. **Install dependencies**:
+4. **(Optioneel) Registreer een aparte Jupyter-kernel**:
    ```bash
-   pip install -r requirements.txt
+   make jupyter-kernel
    ```
 
-4. **Launch Jupyter Notebook**:
+5. **Start Jupyter Notebook**:
    ```bash
    jupyter notebook
    ```
 
-5. **Open the relevant notebook** (see below)
+6. **Open het relevante notebook** (zie hieronder)
 
-## Notebooks Guide
+## Standaard Make-commando's
 
-### 1. [etl_processes.ipynb](etl_processes.ipynb)
-**Start here** - The main tutorial notebook with exercises.
+Inspecteer de `Makefile`. Een Makefile is een bestand met een aantal commando's die de setup makkelijker moet maken:
 
-**What you'll learn:**
-- Pipeline triggers and scheduling (cron expressions, job dependencies)
-- Connecting to data sources (files, APIs)
-- State management (tracking processed files)
-- Data extraction from multiple sources
-- Data transformation and enrichment
-- Data quality validation
-- Loading data to CSV/Parquet formats
-- Retention policies and archiving
+- `make help` - Toont beschikbare commando's
+- `make create-venv` - Maak/vernieuw de lokale virtual environment en installeer `uv`
+- `make install` - Installeer alle dependencies uit `pyproject.toml` en valideer imports
+- `make jupyter-kernel` - Registreer de kernel `Python (ETL Processes)` voor notebooks
+- `make clean` - Verwijder lokaal gegenereerde omgevingsbestanden (`.venv`) om bijvoorbeeld opnieuw te beginnen.
 
-**Best for:** Complete beginners who want step-by-step guidance with exercises.
+## Dependencies
 
-### 2. [uitwerkingen.ipynb](uitwerkingen.ipynb)
-**Solutions notebook** - Complete working implementations of all exercises.
+Dependencies worden centraal beheerd in `pyproject.toml`.
 
-**What you'll find:**
-- Full solution code for all exercises in `etl_processes.ipynb`
-- Additional implementation details and best practices
-- Comments explaining design decisions
+Belangrijkste pakketten in deze ETL-cursus:
+- `pandas`, `numpy` voor data-extractie en transformatie
+- `requests` voor API-gebaseerde extractie
+- `pyarrow`, `fastparquet` voor analysegeschikte outputformaten
+- `apscheduler` voor planningsconcepten
+- `ipython`, `ipykernel`, `matplotlib` voor notebook-gebaseerd leren en visuele controles
 
-**Best for:** Checking your solutions or getting unstuck on specific exercises.
+## Voorbeelddata
 
-### 3. [uitwerkingen_met_spark.ipynb](uitwerkingen_met_spark.ipynb)
-**Advanced: Scaling with PySpark** - BONUS material for handling larger datasets.
-
-**What you'll learn:**
-- When to use Spark vs pandas
-- Setting up a Spark session
-- Parallel data extraction with Spark
-- Lazy evaluation and query optimization
-- Partitioned data storage
-- Performance comparison
-
-**Best for:** Students who completed the main tutorial and want to learn about distributed processing.
+De map [sample_data/](sample_data/) bevat:
+- `sensor_readings_day1.json` - Eerste batch met sensormetingen
+- `sensor_readings_day2.json` - Tweede batch met sensormetingen
+- `sensor_metadata.csv` - Sensorconfiguratie en metadata
 
 
-## Sample Data
+## Belangrijkste concepten
 
-The [sample_data/](sample_data/) directory contains:
-- `sensor_readings_day1.json` - First batch of sensor measurements
-- `sensor_readings_day2.json` - Second batch of sensor measurements
-- `sensor_metadata.csv` - Sensor configuration and metadata
+1. **Trigger** - Wanneer en hoe je pipelines start (cron, event-based)
+2. **Connection** - Authenticeren en verbinden met databronnen
+3. **State Management** - Bijhouden wat al verwerkt is
+4. **Extraction** - Lezen uit meerdere databronnen
+5. **Transformation** - Data opschonen, verrijken en filteren
+6. **Validation** - Datakwaliteitscontroles en toleranties
+7. **Loading** - Wegschrijven naar doelopslag (CSV vs Parquet)
+8. **Archiving** - Retentiebeleid en datalevenscyclus
+9. **Scaling** - Van pandas naar PySpark voor grotere datasets
 
+De setup in deze repository is bewust eenvoudig en reproduceerbaar gehouden, zodat studenten zich kunnen richten op ETL-kernconcepten in plaats van omgevingsproblemen.
 
-## Key Concepts Covered
+## Aanvullende bronnen
 
-1. **Trigger** - When and how to start pipelines (cron, event-based)
-2. **Connection** - Authenticating and connecting to data sources
-3. **State Management** - Tracking what's been processed
-4. **Extraction** - Reading from multiple data sources
-5. **Transformation** - Cleaning, enriching, and filtering data
-6. **Validation** - Data quality checks and tolerance policies
-7. **Loading** - Writing to target storage (CSV vs Parquet)
-8. **Archiving** - Retention policies and data lifecycle
-9. **Scaling** - Moving from pandas to PySpark for large datasets
-
-## Additional Resources
-
-- [Apache Airflow](https://airflow.apache.org/) - Production-grade pipeline orchestration
-- [dbt](https://www.getdbt.com/) - SQL-based transformation framework
-- [Great Expectations](https://greatexpectations.io/) - Data quality framework
-- [Open-Meteo API](https://open-meteo.com/) - Free weather data API used in this tutorial
+- [Apache Airflow](https://airflow.apache.org/) - Productieklare pipeline-orkestratie
+- [dbt](https://www.getdbt.com/) - SQL-gebaseerd transformatieframework
+- [Great Expectations](https://greatexpectations.io/) - Framework voor datakwaliteit
+- [Open-Meteo API](https://open-meteo.com/) - Gratis weer-API die in deze tutorial wordt gebruikt
 
 ## Troubleshooting
 
-**Issue:** `ModuleNotFoundError` when running notebooks
-- **Solution:** Make sure you activated the virtual environment and installed requirements
+**Probleem:** `ModuleNotFoundError` bij het uitvoeren van notebooks
+- **Oplossing:** Voer `make install` uit en daarna `source .venv/bin/activate` voordat je notebooks opent
 
-**Issue:** Weather API not responding
-- **Solution:** Check your internet connection; the Open-Meteo API is free and doesn't require authentication
+**Probleem:** Weer-API reageert niet
+- **Oplossing:** Controleer je internetverbinding; de Open-Meteo API is gratis en vereist geen authenticatie
 
-**Issue:** PySpark notebook fails locally
-- **Solution:** Try running in [Google Colab](https://colab.research.google.com/) instead, which has Spark pre-installed
+**Probleem:** PySpark-notebook faalt lokaal
+- **Oplossing:** Probeer het notebook in [Google Colab](https://colab.research.google.com/) te draaien; Spark is daar al geïnstalleerd
 
-## License
+## Licentie
 
-This educational material is provided for learning purposes.
+Dit onderwijsmateriaal is bedoeld voor leerdoeleinden.
