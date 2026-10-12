@@ -1,8 +1,0 @@
-APScheduler
-ipython
-ipykernel
-pandas
-numpy
-requests
-pyarrow
-fastparquet
